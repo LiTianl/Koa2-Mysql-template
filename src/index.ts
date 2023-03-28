@@ -31,6 +31,8 @@ app.use(koaJwt({ secret: secretKey }).unless({ path: ['/home/login'] })) //忽�
 
 app.use(router())// 路由
 
+
+// 错误监听
 app.on('error', (err, ctx) => {
   ctx.body = {
     code: ctx.response.status,
